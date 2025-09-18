@@ -1,5 +1,7 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState(() => {
@@ -40,34 +42,12 @@ const App = () => {
   return (
     <div className="App">
       <h1>My Todo List</h1>
-
-      {/* Form to add new todo */}
-      <form onSubmit={handleAddTodo}>
-        <input
-          id="todo-input"
-          name="todo"
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Enter a new todo"
-        />
-        <button type="submit">Add Todo</button>
-      </form>
-
-      {/* List of todos */}
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            <span
-              className={todo.completed ? "completed" : ""}
-              onClick={() => toggleTodo(todo.id)}
-            >
-              {todo.text}
-            </span>
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>{" "}
-          </li>
-        ))}
-      </ul>
+      <TodoForm
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+        onSubmit={handleAddTodo}
+      />
+      <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
     </div>
   );
 };
