@@ -44,6 +44,8 @@ const App = () => {
       {/* Form to add new todo */}
       <form onSubmit={handleAddTodo}>
         <input
+          id="todo-input"
+          name="todo"
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
@@ -57,10 +59,7 @@ const App = () => {
         {todos.map((todo) => (
           <li key={todo.id}>
             <span
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-                cursor: "pointer",
-              }}
+              className={todo.completed ? "completed" : ""}
               onClick={() => toggleTodo(todo.id)}
             >
               {todo.text}
