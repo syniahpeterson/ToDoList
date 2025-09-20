@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/TodoForm.css";
 
+// Form for adding a new todo
 const TodoForm = ({ value, onChange, onSubmit }) => (
   <form onSubmit={onSubmit} className="todo-form">
     <input

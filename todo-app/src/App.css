@@ -5,31 +5,39 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
-body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  min-height: 100dvh;
-  width: 100vw;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.App {
-  background: #23272f;
-  max-width: 340px;
-  width: 100%;
-  margin: 40px auto;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  padding: 2.5rem 1rem 2rem 1rem;
-  text-align: center;
-  color: #fff;
-  box-sizing: border-box;
+  .App {
+    background: #23272f;
+    width: 100%;
+    max-width: 600px;
+    min-width: 0;
+    margin: 40px auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 400px) {
+    .App {
+      max-width: 340px;
+      padding: 2.5rem 0.5rem 2rem 0.5rem;
+    }
+  }
 }
 
 h1 {
