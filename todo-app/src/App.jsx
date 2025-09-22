@@ -61,19 +61,21 @@ const App = () => {
   });
 
   return (
-    <div className="App">
-      <h1>My Todo List</h1>
-      <TodoForm
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
-        onSubmit={handleAddTodo}
-      />
-      <TodoList
-        todos={sortedTodos}
-        onToggle={toggleTodo}
-        onDelete={deleteTodo}
-        onToggleImportant={toggleImportant}
-      />
+    <div className="phone-frame">
+      <div className="App">
+        <h1>My Todo List</h1>
+        <TodoForm
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+          onSubmit={handleAddTodo}
+        />
+        <TodoList
+          todos={sortedTodos}
+          onToggle={toggleTodo}
+          onDelete={deleteTodo}
+          onToggleImportant={toggleImportant}
+        />
+      </div>
     </div>
   );
 };
